@@ -18,7 +18,8 @@ const getAllUsersController = async(req, res) => {
     const users = await getUsersService();
     res.status(200).send({
         users: users,
-        count: users.length
+        count: users.length,
+        email: req.user.userEmail
     })
 }
 
